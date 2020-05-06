@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12270003-C0B7-4958-A492-A0C38DA7045F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shr.ZipCodeValidator</RootNamespace>
+    <AssemblyName>Shr.ZipCodeValidator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseValidator\BaseZipCodeValidator.cs" />
+    <Compile Include="Common\CountryCode.cs" />
+    <Compile Include="BaseValidator\ICountryZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\ADZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\AMZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\ARZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\ASZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\ATZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\AUZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\AXZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\AZZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\BAZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\BBZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\BDZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\BEZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\BGZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\BHZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\BMZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\BNZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\BRZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\BYZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\CAZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\CCZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\CHZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\CKZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\CLZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\CNZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\CRZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\CSZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\CVZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\CXZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\CYZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\CZZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\DEZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\DKZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\DOZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\DZZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\ECZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\EEZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\EGZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\ESZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\ETZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\FIZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\FKZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\FMZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\FOZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\FRZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\GBZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\GEZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\GFZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\GGZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\GLZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\GNZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\GPZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\GRZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\GSZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\GTZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\GUZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\GWZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\HMZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\HNZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\HRZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\HTZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\HUZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\IDZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\ILZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\IMZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\INZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\IOZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\IQZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\ISZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\ITZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\JEZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\JOZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\JPZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\KEZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\KGZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\KHZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\KRZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\KWZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\KZZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\LAZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\LBZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\LIZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\LKZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\LRZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\LSZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\LTZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\LUZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\LVZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MAZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MCZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MDZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MEZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MGZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MHZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MKZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MNZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MPZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MQZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MTZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MUZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MVZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MXZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\MYZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\NCZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\NEZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\NFZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\NGZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\NIZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\NLZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\NOZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\NPZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\NZZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\OMZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\PFZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\PGZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\PHZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\PKZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\PLZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\PMZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\PNZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\PRZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\PTZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\PWZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\PYZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\REZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\ROZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\RSZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\RUZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\SAZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\SEZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\SGZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\SHZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\SIZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\SJZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\SKZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\SMZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\SNZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\SOZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\SZZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\TCZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\THZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\TJZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\TMZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\TNZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\TRZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\TWZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\UAZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\USZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\UYZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\UZZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\VAZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\VEZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\VIZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\WFZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\XKZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\YTZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\YUZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\ZAZipCodeValidator.cs" />
+    <Compile Include="CountryValidators\ZMZipCodeValidator.cs" />
+    <Compile Include="EmailValidator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UniversalZipCodeValidator.cs" />
+    <Compile Include="ValidatorFactories\CountryZipCodeValidatorFactory.cs" />
+    <Compile Include="ValidatorFactories\IValidatorFactory.cs" />
+    <Compile Include="ValidatorStrategies\IValidatorStrategy.cs" />
+    <Compile Include="ValidatorStrategies\RegexValidatorStrategy.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

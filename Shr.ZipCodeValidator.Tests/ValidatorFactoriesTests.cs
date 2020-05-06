@@ -1,0 +1,195 @@
+﻿using Shr.ZipCodeValidator.Common;
+using Shr.ZipCodeValidator.CountryValidators;
+using Shr.ZipCodeValidator.ValidatorFactories;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Shr.ZipCodeValidator.Tests
+{
+    [TestClass]
+    public class ValidatorFactoriesTests
+    {
+        Dictionary<CountryCode, Type> _mapper =
+            new Dictionary<CountryCode, Type>
+            {
+                { CountryCode.AD, typeof(ADZipCodeValidator) },
+                { CountryCode.AM, typeof(AMZipCodeValidator) },
+                { CountryCode.AR, typeof(ARZipCodeValidator) },
+                { CountryCode.AS, typeof(ASZipCodeValidator) },
+                { CountryCode.AT, typeof(ATZipCodeValidator) },
+                { CountryCode.AU, typeof(AUZipCodeValidator) },
+                { CountryCode.AX, typeof(AXZipCodeValidator) },
+                { CountryCode.AZ, typeof(AZZipCodeValidator) },
+                { CountryCode.BA, typeof(BAZipCodeValidator) },
+                { CountryCode.BB, typeof(BBZipCodeValidator) },
+                { CountryCode.BD, typeof(BDZipCodeValidator) },
+                { CountryCode.BE, typeof(BEZipCodeValidator) },
+                { CountryCode.BG, typeof(BGZipCodeValidator) },
+                { CountryCode.BH, typeof(BHZipCodeValidator) },
+                { CountryCode.BM, typeof(BMZipCodeValidator) },
+                { CountryCode.BN, typeof(BNZipCodeValidator) },
+                { CountryCode.BR, typeof(BRZipCodeValidator) },
+                { CountryCode.BY, typeof(BYZipCodeValidator) },
+                { CountryCode.CA, typeof(CAZipCodeValidator) },
+                { CountryCode.CC, typeof(CCZipCodeValidator) },
+                { CountryCode.CH, typeof(CHZipCodeValidator) },
+                { CountryCode.CK, typeof(CKZipCodeValidator) },
+                { CountryCode.CL, typeof(CLZipCodeValidator) },
+                { CountryCode.CN, typeof(CNZipCodeValidator) },
+                { CountryCode.CR, typeof(CRZipCodeValidator) },
+                { CountryCode.CS, typeof(CSZipCodeValidator) },
+                { CountryCode.CV, typeof(CVZipCodeValidator) },
+                { CountryCode.CX, typeof(CXZipCodeValidator) },
+                { CountryCode.CY, typeof(CYZipCodeValidator) },
+                { CountryCode.CZ, typeof(CZZipCodeValidator) },
+                { CountryCode.DE, typeof(DEZipCodeValidator) },
+                { CountryCode.DK, typeof(DKZipCodeValidator) },
+                { CountryCode.DO, typeof(DOZipCodeValidator) },
+                { CountryCode.DZ, typeof(DZZipCodeValidator) },
+                { CountryCode.EC, typeof(ECZipCodeValidator) },
+                { CountryCode.EE, typeof(EEZipCodeValidator) },
+                { CountryCode.EG, typeof(EGZipCodeValidator) },
+                { CountryCode.ES, typeof(ESZipCodeValidator) },
+                { CountryCode.ET, typeof(ETZipCodeValidator) },
+                { CountryCode.FI, typeof(FIZipCodeValidator) },
+                { CountryCode.FK, typeof(FKZipCodeValidator) },
+                { CountryCode.FM, typeof(FMZipCodeValidator) },
+                { CountryCode.FO, typeof(FOZipCodeValidator) },
+                { CountryCode.FR, typeof(FRZipCodeValidator) },
+                { CountryCode.GB, typeof(GBZipCodeValidator) },
+                { CountryCode.GE, typeof(GEZipCodeValidator) },
+                { CountryCode.GF, typeof(GFZipCodeValidator) },
+                { CountryCode.GG, typeof(GGZipCodeValidator) },
+                { CountryCode.GL, typeof(GLZipCodeValidator) },
+                { CountryCode.GN, typeof(GNZipCodeValidator) },
+                { CountryCode.GP, typeof(GPZipCodeValidator) },
+                { CountryCode.GR, typeof(GRZipCodeValidator) },
+                { CountryCode.GS, typeof(GSZipCodeValidator) },
+                { CountryCode.GT, typeof(GTZipCodeValidator) },
+                { CountryCode.GU, typeof(GUZipCodeValidator) },
+                { CountryCode.GW, typeof(GWZipCodeValidator) },
+                { CountryCode.HM, typeof(HMZipCodeValidator) },
+                { CountryCode.HN, typeof(HNZipCodeValidator) },
+                { CountryCode.HR, typeof(HRZipCodeValidator) },
+                { CountryCode.HT, typeof(HTZipCodeValidator) },
+                { CountryCode.HU, typeof(HUZipCodeValidator) },
+                { CountryCode.ID, typeof(IDZipCodeValidator) },
+                { CountryCode.IL, typeof(ILZipCodeValidator) },
+                { CountryCode.IM, typeof(IMZipCodeValidator) },
+                { CountryCode.IN, typeof(INZipCodeValidator) },
+                { CountryCode.IO, typeof(IOZipCodeValidator) },
+                { CountryCode.IQ, typeof(IQZipCodeValidator) },
+                { CountryCode.IS, typeof(ISZipCodeValidator) },
+                { CountryCode.IT, typeof(ITZipCodeValidator) },
+                { CountryCode.JE, typeof(JEZipCodeValidator) },
+                { CountryCode.JO, typeof(JOZipCodeValidator) },
+                { CountryCode.JP, typeof(JPZipCodeValidator) },
+                { CountryCode.KE, typeof(KEZipCodeValidator) },
+                { CountryCode.KG, typeof(KGZipCodeValidator) },
+                { CountryCode.KH, typeof(KHZipCodeValidator) },
+                { CountryCode.KR, typeof(KRZipCodeValidator) },
+                { CountryCode.KW, typeof(KWZipCodeValidator) },
+                { CountryCode.KZ, typeof(KZZipCodeValidator) },
+                { CountryCode.LA, typeof(LAZipCodeValidator) },
+                { CountryCode.LB, typeof(LBZipCodeValidator) },
+                { CountryCode.LI, typeof(LIZipCodeValidator) },
+                { CountryCode.LK, typeof(LKZipCodeValidator) },
+                { CountryCode.LR, typeof(LRZipCodeValidator) },
+                { CountryCode.LS, typeof(LSZipCodeValidator) },
+                { CountryCode.LT, typeof(LTZipCodeValidator) },
+                { CountryCode.LU, typeof(LUZipCodeValidator) },
+                { CountryCode.LV, typeof(LVZipCodeValidator) },
+                { CountryCode.MA, typeof(MAZipCodeValidator) },
+                { CountryCode.MC, typeof(MCZipCodeValidator) },
+                { CountryCode.MD, typeof(MDZipCodeValidator) },
+                { CountryCode.ME, typeof(MEZipCodeValidator) },
+                { CountryCode.MG, typeof(MGZipCodeValidator) },
+                { CountryCode.MH, typeof(MHZipCodeValidator) },
+                { CountryCode.MK, typeof(MKZipCodeValidator) },
+                { CountryCode.MN, typeof(MNZipCodeValidator) },
+                { CountryCode.MP, typeof(MPZipCodeValidator) },
+                { CountryCode.MQ, typeof(MQZipCodeValidator) },
+                { CountryCode.MT, typeof(MTZipCodeValidator) },
+                { CountryCode.MU, typeof(MUZipCodeValidator) },
+                { CountryCode.MV, typeof(MVZipCodeValidator) },
+                { CountryCode.MX, typeof(MXZipCodeValidator) },
+                { CountryCode.MY, typeof(MYZipCodeValidator) },
+                { CountryCode.NC, typeof(NCZipCodeValidator) },
+                { CountryCode.NE, typeof(NEZipCodeValidator) },
+                { CountryCode.NF, typeof(NFZipCodeValidator) },
+                { CountryCode.NG, typeof(NGZipCodeValidator) },
+                { CountryCode.NI, typeof(NIZipCodeValidator) },
+                { CountryCode.NL, typeof(NLZipCodeValidator) },
+                { CountryCode.NO, typeof(NOZipCodeValidator) },
+                { CountryCode.NP, typeof(NPZipCodeValidator) },
+                { CountryCode.NZ, typeof(NZZipCodeValidator) },
+                { CountryCode.OM, typeof(OMZipCodeValidator) },
+                { CountryCode.PF, typeof(PFZipCodeValidator) },
+                { CountryCode.PG, typeof(PGZipCodeValidator) },
+                { CountryCode.PH, typeof(PHZipCodeValidator) },
+                { CountryCode.PK, typeof(PKZipCodeValidator) },
+                { CountryCode.PL, typeof(PLZipCodeValidator) },
+                { CountryCode.PM, typeof(PMZipCodeValidator) },
+                { CountryCode.PN, typeof(PNZipCodeValidator) },
+                { CountryCode.PR, typeof(PRZipCodeValidator) },
+                { CountryCode.PT, typeof(PTZipCodeValidator) },
+                { CountryCode.PW, typeof(PWZipCodeValidator) },
+                { CountryCode.PY, typeof(PYZipCodeValidator) },
+                { CountryCode.RE, typeof(REZipCodeValidator) },
+                { CountryCode.RO, typeof(ROZipCodeValidator) },
+                { CountryCode.RS, typeof(RSZipCodeValidator) },
+                { CountryCode.RU, typeof(RUZipCodeValidator) },
+                { CountryCode.SA, typeof(SAZipCodeValidator) },
+                { CountryCode.SE, typeof(SEZipCodeValidator) },
+                { CountryCode.SG, typeof(SGZipCodeValidator) },
+                { CountryCode.SH, typeof(SHZipCodeValidator) },
+                { CountryCode.SI, typeof(SIZipCodeValidator) },
+                { CountryCode.SJ, typeof(SJZipCodeValidator) },
+                { CountryCode.SK, typeof(SKZipCodeValidator) },
+                { CountryCode.SM, typeof(SMZipCodeValidator) },
+                { CountryCode.SN, typeof(SNZipCodeValidator) },
+                { CountryCode.SO, typeof(SOZipCodeValidator) },
+                { CountryCode.SZ, typeof(SZZipCodeValidator) },
+                { CountryCode.TC, typeof(TCZipCodeValidator) },
+                { CountryCode.TH, typeof(THZipCodeValidator) },
+                { CountryCode.TJ, typeof(TJZipCodeValidator) },
+                { CountryCode.TM, typeof(TMZipCodeValidator) },
+                { CountryCode.TN, typeof(TNZipCodeValidator) },
+                { CountryCode.TR, typeof(TRZipCodeValidator) },
+                { CountryCode.TW, typeof(TWZipCodeValidator) },
+                { CountryCode.UA, typeof(UAZipCodeValidator) },
+                { CountryCode.US, typeof(USZipCodeValidator) },
+                { CountryCode.UY, typeof(UYZipCodeValidator) },
+                { CountryCode.UZ, typeof(UZZipCodeValidator) },
+                { CountryCode.VA, typeof(VAZipCodeValidator) },
+                { CountryCode.VE, typeof(VEZipCodeValidator) },
+                { CountryCode.VI, typeof(VIZipCodeValidator) },
+                { CountryCode.WF, typeof(WFZipCodeValidator) },
+                { CountryCode.XK, typeof(XKZipCodeValidator) },
+                { CountryCode.YT, typeof(YTZipCodeValidator) },
+                { CountryCode.YU, typeof(YUZipCodeValidator) },
+                { CountryCode.ZA, typeof(ZAZipCodeValidator) },
+                { CountryCode.ZM, typeof(ZMZipCodeValidator) }
+            };
+
+        [TestMethod]
+        public void TestAll_GetValidator()
+        {
+            var values = Enum.GetValues(typeof(CountryCode));
+            foreach (var code in values)
+            {
+                var _code = (CountryCode)code;
+                Assert.AreEqual(_mapper[_code], MockInstance.factory.GetValidator(_code).GetType());
+            }
+        }
+
+        [TestMethod]
+        public void Invalid_EmptyCountryList()
+        {
+            var factory = new CountryZipCodeValidatorFactory(null);
+            Assert.ThrowsException<Exception>(() => factory.GetValidator(CountryCode.US));
+        }
+    }
+}
